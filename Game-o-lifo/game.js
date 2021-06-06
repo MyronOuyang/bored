@@ -1,15 +1,41 @@
-this.fillArray = () => {
-
-    for (let i = 0; i < this.cells_in_rows; i++) {
-        for (let j = 0; j < this.cells_in_column; j++) {
-            let color;
-            if (this.active_array[i][j] == 1)
-                color = this.alive_color;
-            else
-                color = this.dead_color;
-            ctx.fillStyle = color;
-            ctx.fillRect(1, 1, 5, 5);
+class Game {
+    constructor() {
+        this.grid = new Array(102);
+        this.dead = `#181818`;
+        this.alive = `#2E8BC0`;
+        this.size = 5;
+        for (let i = 1; i < this.grid.length-1; i++) {
+            this.grid[i] = new Array(102);
+            for (let j = 1; j < this.grid[i].length-1; j++) {
+                this.grid[i][j] = this.randomStart(.95)
+            }
         }
     }
 
-};
+    roundPass
+    randomStart(prob) {
+        let res = 0;
+        let ran = Math.random();
+        if(ran > prob){
+            res = 1;
+        }
+        return res
+    }
+
+    fillCanvas() {
+        for (let i = 1; i < this.grid.length -1; i++) {
+            for (let j = 1; j < this.grid[i].length-1; j++) {
+                if (this.grid[i][j] > 0) {
+                    ctx.fillStyle = this.alive;
+                } else {
+                    ctx.fillStyle = this.dead;
+                }
+                ctx.fillRect(i * this.size, j * this.size, this.size, this.size);
+            }
+        }
+    }
+}
+
+
+// let game = new Game()
+// console.log("ding");

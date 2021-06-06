@@ -1,10 +1,16 @@
 const canvas = document.querySelector("#gamefield")
 const ctx = canvas.getContext("2d")
 
-dead_color = `#181818`;
-alive_color = `#FF756B`;
-ctx.fillStyle = alive_color;
-ctx.fillRect(5, 5, 5, 5);
+let game = new Game()
+game.fillCanvas()
+// dead_color = `#181818`;
+// alive_color = `#2E8BC0`;
+// ctx.fillStyle = alive_color;
+// ctx.fillRect(0, 0, 5, 5);
+// ctx.fillRect(0, 5, 5, 5);
+// ctx.fillRect(495, 10, 5, 5);
+// ctx.fillRect(5, 5, 5, 5);
+// ctx.fillRect(10, 10, 5, 5);
 
 // const game = new GameOfLife()
 // game.gameSetUp()
