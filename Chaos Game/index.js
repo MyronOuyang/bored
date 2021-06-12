@@ -4,8 +4,11 @@ const ctx = canvas.getContext("2d")
 let game = new ChaosGame()
 
 game.fillCanvas()
-// window.onload = () => {
-//     window.setInterval(() => {
-//         game.roundPass()
-//     }, 50)
-// }
+game.draw()
+// game.randomDraw()
+// game.randomDraw()
+window.onload = () => {
+    window.setInterval(() => {
+        game.randomDraw()
+    }, 1)
+}
