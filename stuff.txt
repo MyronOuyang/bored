@@ -1,3 +1,4 @@
 track stocks
 Load shedding tracker
 https://www.youtube.com/watch?v=kbKtFN71Lfs
+password cracker/ checker/ generator
